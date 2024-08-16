@@ -42,6 +42,5 @@ export class Post extends Model<Post> {
   @HasMany(() => Comment)
   comments!: Comment[];
 
-  @HasMany(() => Recipe)
-  recipes!: Recipe[];
+
 }

@@ -8,6 +8,8 @@ import userRoutes from './routes/userRoutes';
 import ingredientRoutes from './routes/ingredientRoutes'; 
 import recipeRoutes from './routes/recipeRoutes'; 
 import postRoutes from './routes/postRoutes'; 
+import commentRoutes from './routes/commentRoutes'; 
+
 
 
 dotenv.config(); 
@@ -28,6 +30,7 @@ app.use('/user', userRoutes);
 app.use('/ing', ingredientRoutes); 
 app.use('/recipe',recipeRoutes); 
 app.use('/posts', postRoutes);
+app.use('/comment', commentRoutes);
 
 // Ensure PORT is defined
 const PORT = process.env.PORT;

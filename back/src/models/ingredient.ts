@@ -6,10 +6,7 @@ import {
   AutoIncrement,
   PrimaryKey,
   AllowNull,
-  ForeignKey,
-  BelongsTo,
 } from "sequelize-typescript";
-import { Recipe } from "./recipe";
 import { UNITS } from "../helpers/constants";
 
 @Table({
@@ -32,15 +29,6 @@ export class Ingredient extends Model<Ingredient> {
   @AllowNull(false)
   @Column({
     type: DataType.ENUM(...Object.values(UNITS)),
-    allowNull: false,
   })
   unit!: UNITS;
-
-  @ForeignKey(() => Recipe)
-  @AllowNull(false)
-  @Column(DataType.INTEGER)
-  idRecipe!: number;
-
-  @BelongsTo(() => Recipe)
-  recipe!: Recipe;
 }
